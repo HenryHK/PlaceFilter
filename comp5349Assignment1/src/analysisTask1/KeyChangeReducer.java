@@ -7,11 +7,9 @@ import java.util.Map;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import jdk.nashorn.internal.runtime.Context;
+public class KeyChangeReducer extends Reducer<Text, Text, Text, Text>{
 
-public class KeyChangeReducer extends Reducer<IntWritable, Text, Text, IntWritable>{
-
-    public void reduce(IntWritable key, Iterable<Text> values, Context context)
+    public void reduce(Text key, Iterable<Text> values, Context context)
         throws IOException, InterruptedException{
             for(Text text: values){
                 context.write(text, key);

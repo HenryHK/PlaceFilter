@@ -2,20 +2,18 @@ package analysisTask1;
 
 import java.io.IOException;
 
+import javax.naming.Context;
 import javax.swing.plaf.metal.MetalIconFactory.PaletteCloseIcon;
 
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Mapper;
-import org.w3c.dom.Text;
 
-public class KeyChangeMapper extends Mapper<Text, Text, IntWritable, Text>{
+public class KeyChangeMapper extends Mapper<LongWritable, Text, Text, Text>{
 
-    private IntWritable freq = new IntWritable();
-
-    public void map(Text key, Text value, Context context) 
+    public void map(LongWritable key, Text value, Context context) 
         throws IOException, InterruptedException {
-            freq.set(Integer.parseInt(value.toString()));
-            context.write(freq, key);
+            String[] fields = value.toString().split("\t");
+            context.write(new Text(fields[1]), new Text(fields[0]));
         }
 
 }
