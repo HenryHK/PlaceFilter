@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="comp5349Assignment1" basedir="." default="jar">
+<project name="PlaceFilter" basedir="." default="jar">
     <property name="src.dir" value="src"/>
     <property name="classes.dir" value="classes"/>
     <property name="eclipseclasses.dir" value ="bin"/>
