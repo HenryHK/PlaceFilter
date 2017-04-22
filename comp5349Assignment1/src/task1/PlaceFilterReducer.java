@@ -1,4 +1,4 @@
-package analysisTask1;
+package task1;
 
 import java.io.IOException;
 import java.util.HashMap;

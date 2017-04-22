@@ -1,9 +1,6 @@
-package analysisTask1;
+package task2;
 
 import java.io.IOException;
-
-import javax.naming.Context;
-import javax.swing.plaf.metal.MetalIconFactory.PaletteCloseIcon;
 
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Mapper;

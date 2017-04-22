@@ -1,4 +1,4 @@
-package analysisTask1;
+package task2;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

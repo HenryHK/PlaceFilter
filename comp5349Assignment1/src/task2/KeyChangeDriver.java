@@ -1,4 +1,4 @@
-package analysisTask1;
+package task2;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.fs.FileSystem;
-import analysisTask1.KeyChangeReducer;
+import task2.KeyChangeReducer;
 
 public class  KeyChangeDriver{
 
