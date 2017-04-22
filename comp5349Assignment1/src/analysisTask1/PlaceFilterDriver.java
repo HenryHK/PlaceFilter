@@ -24,13 +24,10 @@ public class PlaceFilterDriver
 			System.exit(2);
 		}
 		
-//		if (otherArgs.length == 3){
-//			conf.set("mapper.placeFilter.country", otherArgs[2]);
-//		}
 		
 		Job job = new Job(conf, "Place Filter");
 		job.setJarByClass(PlaceFilterDriver.class);
-		job.setNumReduceTasks(3);
+		job.setNumReduceTasks(1);
 		job.setMapperClass(PlaceFilterMapper.class);
 		job.setReducerClass(PlaceFilterReducer.class);
 		job.setOutputKeyClass(Text.class);

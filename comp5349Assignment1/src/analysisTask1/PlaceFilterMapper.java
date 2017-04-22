@@ -8,12 +8,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 
-//This mapper is used to select place_id and place_name out from place.txt
-//Steps: 1. select only 7 and 22 and cut neighborhood out from 22 to become 7, 2. output place_id and place_name
-//Input format: place_id \t woeid \t latitude \t longitude \t place_name \t place_type_id \t place_url
-//Output format: place_id \t place_name (only place_type: 7 including 22 changed)
-//@see PlaceFilterDriver
-//@author Zhao Liu
+//input place.txt
+//output PlaceName \t 1
 
 public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text> 
 {

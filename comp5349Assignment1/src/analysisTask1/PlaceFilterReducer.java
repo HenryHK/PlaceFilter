@@ -7,11 +7,16 @@ import java.util.Map;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
+
+// input PlaceName \t 1
+// output PlaceName \t Count
+
 public class PlaceFilterReducer extends Reducer<Text, Text, Text, Text>{
-    Text result = new Text();
-    int counter = 0;
+    
     public void reduce(Text key, Iterable<Text> values, Context context)
         throws IOException, InterruptedException{
+            Text result = new Text();
+            int counter = 0;
             for(Text text : values){
                 counter += Integer.parseInt(text.toString());
             }

@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
-
+import org.apache.hadoop.fs.FileSystem;
 import analysisTask1.KeyChangeReducer;
 
 public class  KeyChangeDriver{
@@ -38,7 +38,7 @@ public class  KeyChangeDriver{
 
 		Job keyChangerJob = new Job(conf, "Key Changer");
 		keyChangerJob.setJarByClass(KeyChangeDriver.class);
-		keyChangerJob.setNumReduceTasks(2);
+		keyChangerJob.setNumReduceTasks(1);
 		keyChangerJob.setMapperClass(KeyChangeMapper.class);
 		keyChangerJob.setSortComparatorClass(KeyInputComparator.class);
 		keyChangerJob.setReducerClass(KeyChangeReducer.class);
@@ -47,6 +47,8 @@ public class  KeyChangeDriver{
 		TextInputFormat.setInputPaths(keyChangerJob, new Path("/user/lhan9852/temp"));
 		TextOutputFormat.setOutputPath(keyChangerJob, new Path(otherArgs[1]));
 		keyChangerJob.waitForCompletion(true);
+
+		FileSystem.get(conf).delete(tmpFilterReducerOut, true);
 
 	}
 }
