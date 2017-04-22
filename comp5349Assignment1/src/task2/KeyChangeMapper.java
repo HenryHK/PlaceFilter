@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Mapper;
 
-// input LongWritable PlaceName \t frequency
+// inputfile PlaceName \t frequency
 // output frequency \t PlaceName
 
 public class KeyChangeMapper extends Mapper<LongWritable, Text, Text, Text>{

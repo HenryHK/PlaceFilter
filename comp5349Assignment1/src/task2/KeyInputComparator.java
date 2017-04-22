@@ -4,8 +4,7 @@ import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.io.*;
 
-//This comparator is invoked by JobChainDriver to sort keys (numberOfPhotos) in descending order before PhotosReducer
-//@author Zhao Liu
+//sort according to frequency in descending order
 
 public class KeyInputComparator extends WritableComparator 
 {

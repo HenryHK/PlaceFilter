@@ -8,10 +8,6 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-//This is the driver to configure PlaceFilterMapper to select necessary place data out based on input file (place.txt)
-//@see PlaceFilterMapper
-//@author Zhao Liu
-
 public class PlaceFilterDriver 
 {
 	public static void main(String[] args) throws Exception 

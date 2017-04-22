@@ -7,6 +7,9 @@ import java.util.Map;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
+//input frequency \t PlaceName (sorted)
+//output PlaceName \t frequency (top50)
+
 public class KeyChangeReducer extends Reducer<Text, Text, Text, Text>{
 
     //HashMap<Text, Text> map = new HashMap<Text, Text>();
