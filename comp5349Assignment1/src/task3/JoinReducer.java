@@ -12,7 +12,7 @@ import task3.TextIntPair;
 // input place-id mapper#0 place-name place-type-id
 //       place-id mapper#1 tags
 
-// output place-id place-name place-type-id 
+// output place-id tags place-name place-type-id 
 
 public class JoinReducer extends Reducer<TextIntPair, Text, Text, Text>{
 
@@ -25,7 +25,7 @@ public class JoinReducer extends Reducer<TextIntPair, Text, Text, Text>{
                         Text value = new Text(valueItr.next().toString() + "\t" + first);
                         context.write(key.getKey(), value);
                     }
-                }else{ //the key is from    
+                }else{ //the key is from photo
                     while(valueItr.hasNext()){
                         context.write(key.getKey(), new Text(valueItr.next().toString() + "\t" + "NULL"));
                     }
