@@ -25,7 +25,7 @@ public class PlaceFilterDriver
 		job.setJarByClass(PlaceFilterDriver.class);
 		job.setNumReduceTasks(1);
 		job.setMapperClass(PlaceFilterMapper.class);
-		job.setReducerClass(PlaceFilterReducer.class);
+		//job.setReducerClass(PlaceFilterReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
 		TextInputFormat.addInputPath(job, new Path(otherArgs[0]));
