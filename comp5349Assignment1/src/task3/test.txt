@@ -1,0 +1,9 @@
+Place1\t10\ttag1
+Place1\t1\ttag2
+Place3\t3\ttag3
+Place1\t14\ttag4
+Place1\t11\ttag5
+Place1\t15\ttag6
+Place2\t10\ttag1
+Place3\t11\ttag5
+Place4\t15\ttag6

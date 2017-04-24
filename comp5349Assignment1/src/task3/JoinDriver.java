@@ -22,7 +22,7 @@ public class JoinDriver{
 			System.exit(2);
 		}
 		Job job = new Job(conf, "join place photo");
-		job.setNumReduceTasks(1); 
+		job.setNumReduceTasks(4); 
 		job.setJarByClass(JoinDriver.class);
 		
 		Path photoTable = new Path(otherArgs[1]);

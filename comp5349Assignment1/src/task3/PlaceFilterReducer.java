@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 
 // input PlaceName \t 1 \t tags
-// output PlaceName \t Count
+// output PlaceName \t Count \t tags
 
 public class PlaceFilterReducer extends Reducer<Text, Text, Text, Text>{
     

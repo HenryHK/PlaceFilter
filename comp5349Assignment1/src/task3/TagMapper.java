@@ -6,7 +6,7 @@ import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Mapper;
 
 // inputfile PlaceName \t frequency \t tags
-// output frequency \t PlaceName \t tags
+// output (tag, PlaceName) 1
 
 public class TagMapper extends Mapper<LongWritable, Text, Text, Text>{
 

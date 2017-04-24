@@ -27,12 +27,16 @@ public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text>
 			return; 
 		}
 		
+		String tag = dataArray[1];
+		//tag.replace(oldChar, newChar);
+
 		//Select 22 and 7
 		if (dataArray[3].trim().equals("7"))
 		{
 			String place_name = dataArray[2].trim();
 			placeName.set(place_name);
-			context.write(placeName, new Text("1\t" + dataArray[1]));
+			
+			context.write(placeName, new Text("1\t" + tag));
 		}
 		else if (dataArray[3].trim().equals("22"))
 		{		
@@ -41,7 +45,7 @@ public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text>
 			String place_name = dataArray[2].trim().substring(index + 1).trim();
 			
 			placeName.set(place_name);
-			context.write(placeName, new Text("1\t" + dataArray[1]));
+			context.write(placeName, new Text("1\t" + tag));
 			
 		}
 		else
