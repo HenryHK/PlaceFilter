@@ -41,19 +41,16 @@ public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text>
 			placeName.set(place_name);
 			
 			String[] subNames = place_name.trim().split(",");
+			
 			for(String subName : subNames){
+				tag = tag.trim();
+				subName = subName.trim();
+				tag = " " + tag + " ";
 				tag = tag.replace(" "+subName.toLowerCase()+" ", " ");
-				tag = tag.replace(" "+subName.toUpperCase()+" ", " ");
-				tag = tag.replace(" "+subName+" ", " ");
-				tag = tag.replace(subName.toLowerCase()+" ", "");
-				tag = tag.replace(subName.toUpperCase()+" ", "");
-				tag = tag.replace(subName+" ", "");
-				tag = tag.replace(" "+subName.toLowerCase(), "");
-				tag = tag.replace(" "+subName.toUpperCase(), "");
-				tag = tag.replace(" "+subName, "");
+				tag = tag.replaceAll(" [0-9]+ ", " ");
 			}
 
-			context.write(placeName, new Text("1\t" + tag));
+			context.write(placeName, new Text("1\t" + tag.trim()));
 		}
 		else if (dataArray[3].trim().equals("22"))
 		{		
@@ -62,20 +59,17 @@ public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text>
 			String place_name = dataArray[2].trim().substring(index + 1).trim();
 			
 			String[] subNames = place_name.trim().split(",");
+			
 			for(String subName : subNames){
+				subName = subName.trim();
+				tag = tag.trim();
+				tag = " " + tag + " ";
 				tag = tag.replace(" "+subName.toLowerCase()+" ", " ");
-				tag = tag.replace(" "+subName.toUpperCase()+" ", " ");
-				tag = tag.replace(" "+subName+" ", " ");
-				tag = tag.replace(subName.toLowerCase()+" ", "");
-				tag = tag.replace(subName.toUpperCase()+" ", "");
-				tag = tag.replace(subName+" ", "");
-				tag = tag.replace(" "+subName.toLowerCase(), "");
-				tag = tag.replace(" "+subName.toUpperCase(), "");
-				tag = tag.replace(" "+subName, "");
+				tag = tag.replaceAll(" [0-9]+ ", " ");
 			}
 
 			placeName.set(place_name);
-			context.write(placeName, new Text("1\t" + tag));
+			context.write(placeName, new Text("1\t" + tag.trim()));
 			
 		}
 		else

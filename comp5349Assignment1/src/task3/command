@@ -4,7 +4,7 @@ hadoop jar PlaceFilter.jar task3.JoinDriver /share/place.txt /share/photo/* Task
 
 Task1
 
-hadoop jar PlaceFilter.jar task3.PlaceFilter Task0/* Task1
+hadoop jar PlaceFilter.jar task3.PlaceFilterDriver Task0/* Task1
 
 Task2 
 
