@@ -1,9 +1,0 @@
-London, England, GB, United Kingdom	28331	 tag1
-London, England, GB, United Kingdom	2833	 tag2
-London, England, GB, United Kingdom	2831	 tag3
-London, England, GB, United Kingdom	2331	 tag4
-London, Egland, GB, United Kingdom	28331	 tag1
-London, England, GB, United Kingdom	2833	 tag2
-London, England, B, United Kingdom	2831	 tag3
-London, England, B, United Kingdom	2331	 tag4
-
