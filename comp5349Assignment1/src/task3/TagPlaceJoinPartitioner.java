@@ -4,7 +4,7 @@ import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapreduce.Partitioner;
 import org.apache.hadoop.io.Text;
 
-public class TopTagPartitioner extends Partitioner<TextIntPair,Text>{
+public class TagPlaceJoinPartitioner extends Partitioner<TextIntPair,Text>{
 
     @Override
 	public int getPartition(TextIntPair key, Text value, int numPartition) {

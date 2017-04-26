@@ -10,7 +10,9 @@ import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.fs.FileSystem;
 
 import task3.TextTextPair;
+import task3.TopTagGroupingComparator;
 import task3.TopTagMapper;
+import task3.TopTagPartitioner;
 import task3.TopTagSortComparator;
 
 public class  TopTagDriver{
@@ -34,6 +36,8 @@ public class  TopTagDriver{
 		job.setReducerClass(TopTagReducer.class);
 		job.setOutputKeyClass(TextIntPair.class);
         job.setSortComparatorClass(TopTagSortComparator.class);
+		job.setGroupingComparatorClass(TopTagGroupingComparator.class);
+		job.setPartitionerClass(TopTagPartitioner.class);
 		job.setOutputValueClass(Text.class);
 		TextInputFormat.addInputPath(job, new Path(otherArgs[0]));
 		TextOutputFormat.setOutputPath(job, new Path(otherArgs[1]));

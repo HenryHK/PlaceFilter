@@ -23,7 +23,7 @@ public class PlaceFilterDriver
 		
 		Job job = new Job(conf, "Place Filter");
 		job.setJarByClass(PlaceFilterDriver.class);
-		job.setNumReduceTasks(2);
+		job.setNumReduceTasks(20);
 		job.setMapperClass(PlaceFilterMapper.class);
 		job.setReducerClass(PlaceFilterReducer.class);
 		job.setOutputKeyClass(Text.class);

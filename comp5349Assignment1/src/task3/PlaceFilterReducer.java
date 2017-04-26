@@ -16,14 +16,15 @@ public class PlaceFilterReducer extends Reducer<Text, Text, Text, Text>{
     public void reduce(Text key, Iterable<Text> values, Context context)
         throws IOException, InterruptedException{
             Text result = new Text();
-            String tags = "";
+            StringBuffer tags = new StringBuffer();
             int counter = 0;
             for(Text text : values){
                 String[] v = text.toString().split("\t");
                 counter += Integer.parseInt(v[0].toString());
-                tags = tags + " " + v[1];
+                if(v.length > 1)
+                    tags.append(v[1]+" ");
             }
-            result.set(Integer.toString(counter) + "\t" + tags);
+            result.set(Integer.toString(counter) + "\t" + tags.toString());
             context.write(key, result);
     }
     

@@ -3,11 +3,10 @@ package task3;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-import task3.TextTextPair;
-
-public class TopTagGroupingComparator extends WritableComparator {
-    protected TopTagGroupingComparator() {
+public class TagPlaceJoinGroupingComparator extends WritableComparator {
+    protected TagPlaceJoinGroupingComparator() {
 		super(TextIntPair.class,true);
+		// TODO Auto-generated constructor stub
 	}
 
 	/**

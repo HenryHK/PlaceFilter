@@ -11,7 +11,7 @@ import task3.TextIntPair;
 //input place-id woeid latitude longtitude place-name place-type-id place-url
 //output place-id place-name place-type-id
 
-public class PlaceMapper extends  Mapper<Object, Text, TextIntPair, Text>{
+public class PlaceMapper extends Mapper<Object, Text, TextIntPair, Text>{
 
     //private TextIntPair pairKey= new TextIntPair(), combinedValue = new Text();
 	

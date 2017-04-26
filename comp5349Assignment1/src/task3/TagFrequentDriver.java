@@ -28,8 +28,11 @@ public class  TagFrequentDriver{
 			System.exit(2);
 		}
 		
-
+		//Configuration config = new Configuration(); 
+		conf.set("mapreduce.map.java.opts", "-Xmx2048M"); //sorry for this but I do require a large memory
+		//JobConf conf1 = new JobConf(config, this.getClass());
 		Job job = new Job(conf, "TagFrequentDriver");
+		//job.setNumMapTasks(5);
 		job.setJarByClass(TagFrequentDriver.class);
 		job.setNumReduceTasks(2);
 		job.setMapperClass(TagFrequentMapper.class);

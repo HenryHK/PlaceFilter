@@ -1,0 +1,29 @@
+Join
+
+hadoop jar PlaceFilter.jar task3.JoinDriver /share/place.txt /share/photo/* Task0
+
+Task1
+
+hadoop jar PlaceFilter.jar task3.PlaceFilter Task0/* Task1
+
+Task2 
+
+hadoop jar PlaceFilter.jar task3.KeyChangeDriver Task1/* Task2
+
+Task3
+
+Task3.1
+hadoop jar PlaceFilter.jar task3.TagDriver Task1/* Task3.1
+
+Task3.2
+hadoop jar PlaceFilter.jar task3.TagFrequentDriver Task3.1/* Task3.2
+
+Task3.3
+hadoop jar PlaceFilter.jar task3.TopTagDriver Task3.2/* Task3.3
+
+Task3.4
+hadoop jar PlaceFilter.jar task3.TopTagPlaceJoinDriver Task2/* Task3.3/* Task3.4
+
+Task3.5
+hadoop jar PlaceFilter.jar task3.PlaceNumTagDriver Task3.4/* Task3.5
+

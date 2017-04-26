@@ -15,6 +15,6 @@ public class TopTagMapper extends Mapper<LongWritable, Text, TextIntPair, Text>{
         throws IOException, InterruptedException{
             String[] t = text.toString().split("\t");
             if(t.length>2)
-                context.write(new TextIntPair(t[0], Integer.parseInt(t[1])), new Text(t[2]));
+                context.write(new TextIntPair(t[0], Integer.parseInt(t[1])), new Text(t[2] + "\t" + t[1]));
     }
 }

@@ -1,6 +1,9 @@
 package task3;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
@@ -28,6 +31,7 @@ public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text>
 		}
 		
 		String tag = dataArray[1];
+		
 		//tag.replace(oldChar, newChar);
 
 		//Select 22 and 7
@@ -36,6 +40,19 @@ public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text>
 			String place_name = dataArray[2].trim();
 			placeName.set(place_name);
 			
+			String[] subNames = place_name.trim().split(",");
+			for(String subName : subNames){
+				tag = tag.replace(" "+subName.toLowerCase()+" ", " ");
+				tag = tag.replace(" "+subName.toUpperCase()+" ", " ");
+				tag = tag.replace(" "+subName+" ", " ");
+				tag = tag.replace(subName.toLowerCase()+" ", "");
+				tag = tag.replace(subName.toUpperCase()+" ", "");
+				tag = tag.replace(subName+" ", "");
+				tag = tag.replace(" "+subName.toLowerCase(), "");
+				tag = tag.replace(" "+subName.toUpperCase(), "");
+				tag = tag.replace(" "+subName, "");
+			}
+
 			context.write(placeName, new Text("1\t" + tag));
 		}
 		else if (dataArray[3].trim().equals("22"))
@@ -44,6 +61,19 @@ public class PlaceFilterMapper extends Mapper<Object, Text, Text, Text>
 			int index = dataArray[2].trim().indexOf(",");
 			String place_name = dataArray[2].trim().substring(index + 1).trim();
 			
+			String[] subNames = place_name.trim().split(",");
+			for(String subName : subNames){
+				tag = tag.replace(" "+subName.toLowerCase()+" ", " ");
+				tag = tag.replace(" "+subName.toUpperCase()+" ", " ");
+				tag = tag.replace(" "+subName+" ", " ");
+				tag = tag.replace(subName.toLowerCase()+" ", "");
+				tag = tag.replace(subName.toUpperCase()+" ", "");
+				tag = tag.replace(subName+" ", "");
+				tag = tag.replace(" "+subName.toLowerCase(), "");
+				tag = tag.replace(" "+subName.toUpperCase(), "");
+				tag = tag.replace(" "+subName, "");
+			}
+
 			placeName.set(place_name);
 			context.write(placeName, new Text("1\t" + tag));
 			
