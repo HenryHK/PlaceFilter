@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.fs.FileSystem;
-import task2.KeyChangeReducer;
+import task3.KeyChangeReducer;
 
 public class  KeyChangeDriver{
 
