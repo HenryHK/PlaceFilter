@@ -9,12 +9,13 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.fs.FileSystem;
 
+import task3.TagFrequentCombiner;
 import task3.TagFrequentMapper;
 import task3.TagFrequentReducer;
 import task3.TextTextPair;
 import task3.TopTagMapper;
 import task3.TopTagSortComparator;
-
+//TODO add combiner to this process
 public class  TagFrequentDriver{
 
 	public static void main(String[] args) throws Exception 
@@ -36,9 +37,9 @@ public class  TagFrequentDriver{
 		job.setJarByClass(TagFrequentDriver.class);
 		job.setNumReduceTasks(2);
 		job.setMapperClass(TagFrequentMapper.class);
+		job.setCombinerClass(TagFrequentCombiner.class);
 		job.setReducerClass(TagFrequentReducer.class);
 		job.setOutputKeyClass(TextTextPair.class);
-        //job.setSortComparatorClass(TopTagSortComparator.class);
 		job.setOutputValueClass(Text.class);
 		TextInputFormat.addInputPath(job, new Path(otherArgs[0]));
 		TextOutputFormat.setOutputPath(job, new Path(otherArgs[1]));

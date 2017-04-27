@@ -9,6 +9,8 @@ import task3.TextTextPair;
 
 //input PlaceName \t frequency \t tags (top50)
 //output (PlaceName tag) 1
+
+//TODO add combiner to this
 public class TagFrequentMapper extends Mapper<LongWritable, Text, TextTextPair, Text>{
 
     TextTextPair k = new TextTextPair();
